@@ -1,0 +1,249 @@
+/* Toolsy - Shared Styles */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
+body { 
+    font-family: 'Inter', system-ui, sans-serif; 
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* Button Styles */
+.btn-primary { 
+    background: #14b8a6;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.15s;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background: #0f766e;
+    transform: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styles */
+.card { 
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s;
+    border: 1px solid #e5e7eb;
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Upload Area Styles */
+.upload-area { 
+    border: 2px dashed #cbd5e1;
+    background: #f8fafc;
+    border-radius: 8px;
+    transition: all 0.15s;
+    padding: 32px 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: #14b8a6;
+    background: #f0fdfa;
+}
+
+.upload-area.dragover {
+    border-color: #14b8a6;
+    background: #f0fdfa;
+    transform: none;
+}
+
+/* Progress Styles */
+.progress-bar {
+    background: linear-gradient(to right, #14b8a6, #0f766e);
+    height: 8px;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-container {
+    background: #e5e7eb;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Spinner Animation */
+.spinner {
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid #14b8a6;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* File Item Styles */
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.file-item:hover {
+    background: #f3f4f6;
+}
+
+.file-icon {
+    width: 32px;
+    height: 32px;
+    background: #14b8a6;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 10px;
+    margin-right: 8px;
+}
+
+/* Tool Card Grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tools-grid {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 16px;
+    }
+    
+    .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Navigation Styles */
+.nav-link {
+    color: #6b7280;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 14px;
+    transition: color 0.15s;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+.nav-link:hover {
+    color: #14b8a6;
+    background: #f0fdfa;
+}
+
+.nav-link.active {
+    color: #14b8a6;
+    border-bottom: 1px solid #14b8a6;
+    background: #f0fdfa;
+}
+
+/* Status Styles */
+.status-success {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #15803d;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.status-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+.status-warning {
+    background: #fffbeb;
+    border: 1px solid #fed7aa;
+    color: #d97706;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin: 8px 0;
+    font-size: 13px;
+}
+
+/* Loading States */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loading-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 280px;
+    font-size: 14px;
+}
+
+/* Fade Animations */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
